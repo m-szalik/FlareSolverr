@@ -28,6 +28,10 @@ def get_config_headless() -> bool:
     return os.environ.get('HEADLESS', 'true').lower() == 'true'
 
 
+def get_config_user_agent() -> str:
+    return os.environ.get('USER_AGENT', None)
+
+
 def get_flaresolverr_version() -> str:
     global FLARESOLVERR_VERSION
     if FLARESOLVERR_VERSION is not None:
@@ -311,6 +315,12 @@ def extract_version_nt_folder() -> str:
 def get_user_agent(driver=None) -> str:
     global USER_AGENT
     if USER_AGENT is not None:
+        return USER_AGENT
+
+    # Check for environment variable first
+    env_user_agent = get_config_user_agent()
+    if env_user_agent is not None:
+        USER_AGENT = env_user_agent
         return USER_AGENT
 
     try:
