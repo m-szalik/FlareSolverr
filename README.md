@@ -268,9 +268,9 @@ This is the same as `request.get` but it takes one more param:
 | LOG_LEVEL          | info                   | Verbosity of the logging. Use `LOG_LEVEL=debug` for more information.                                                                                         |
 | LOG_FILE           | none                   | Path to capture log to file. Example: `/config/flaresolver.log`.                                                                                              |
 | LOG_HTML           | false                  | Only for debugging. If `true` all HTML that passes through the proxy will be logged to the console in `debug` level.                                          |
-| PROXY_URL               | none                   | URL for proxy. Will be overwritten by `request` or `sessions` proxy, if used. Example: `http://127.0.0.1:8080`.                                                                                   |
-| PROXY_USERNAME               | none                   | Username for proxy. Will be overwritten by `request` or `sessions` proxy, if used. Example: `testuser`.                                                                                   |
-| PROXY_PASSWORD               | none                   | Password for proxy. Will be overwritten by `request` or `sessions` proxy, if used. Example: `testpass`.                                                                                   |
+| PROXY_URL          | none                   | URL for proxy. Will be overwritten by `request` or `sessions` proxy, if used. Example: `http://127.0.0.1:8080`.                                                                                   |
+| PROXY_USERNAME     | none                   | Username for proxy. Will be overwritten by `request` or `sessions` proxy, if used. Example: `testuser`.                                                                                   |
+| PROXY_PASSWORD     | none                   | Password for proxy. Will be overwritten by `request` or `sessions` proxy, if used. Example: `testpass`.                                                                                   |
 | CAPTCHA_SOLVER     | none                   | Captcha solving method. It is used when a captcha is encountered. See the Captcha Solvers section.                                                            |
 | TZ                 | UTC                    | Timezone used in the logs and the web browser. Example: `TZ=Europe/London`.                                                                                   |
 | LANG               | none                   | Language used in the web browser. Example: `LANG=en_GB`.                                                                                                      |
@@ -280,6 +280,7 @@ This is the same as `request.get` but it takes one more param:
 | HOST               | 0.0.0.0                | Listening interface. You don't need to change this if you are running on Docker.                                                                              |
 | PROMETHEUS_ENABLED | false                  | Enable Prometheus exporter. See the Prometheus section below.                                                                                                 |
 | PROMETHEUS_PORT    | 8192                   | Listening port for Prometheus exporter. See the Prometheus section below.                                                                                     |
+| USER_AGENT         | browser default        | Set browser user agent                                                                                                                                        |
 
 Environment variables are set differently depending on the operating system. Some examples:
 * Docker: Take a look at the Docker section in this document. Environment variables can be set in the `docker-compose.yml` file or in the Docker CLI command.
